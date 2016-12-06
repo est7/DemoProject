@@ -3,7 +3,6 @@ package com.est7.demoproject;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     Button mBtn8;
     @BindView(R.id.btn_9)
     Button mBtn9;
-    @BindView(R.id.activity_main)
-    LinearLayout mActivityMain;
 
 
     @Override
