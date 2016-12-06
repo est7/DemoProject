@@ -4,6 +4,8 @@ import com.est7.demoproject.bean.LiBean;
 import com.est7.demoproject.bean.TaoBean;
 import com.est7.demoproject.bean.UserBean;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,6 +15,13 @@ import dagger.Provides;
 
 @Module
 public class DraggerActivityModule {
+
+    private String mTaoName;
+
+    public DraggerActivityModule(String taoName) {
+        mTaoName = taoName;
+    }
+
     @Provides
     UserBean provideUserBean() {
         return new UserBean();
@@ -25,9 +34,11 @@ public class DraggerActivityModule {
 
     @Provides
     String provideTaoName() {
-        return mTaoname;
+        //这里一般不会在module的构造方法中写出这个参数的,因为这样子就没有解耦效果了..
+        return mTaoName;
     }
 
+    @Singleton
     @Provides
     LiBean provideLiBean(TaoBean taoBean) {
         return new LiBean(taoBean);

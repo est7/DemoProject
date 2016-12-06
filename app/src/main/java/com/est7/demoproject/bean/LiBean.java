@@ -15,7 +15,7 @@ public class LiBean {
     private String mString;
 
     public LiBean(TaoBean taoBean) {
-        mString = "the new Li" + taoBean.getString() + ":hashCode判断是否是同一个对象" + this.hashCode();
+        mString = "the new Li has" + taoBean.getString() + ":hashCode判断是否是同一个对象" + this.hashCode();
         Logger.d("create the new Li");
     }
 }

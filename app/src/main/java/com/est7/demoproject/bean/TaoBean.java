@@ -15,7 +15,7 @@ public class TaoBean {
     private String mString;
 
     public TaoBean(String name) {
-        mString = "new Tao" + name;
+        mString = "new Tao" + name + "hashcode" + this.hashCode();
         Logger.d("create a new Tao");
     }
 

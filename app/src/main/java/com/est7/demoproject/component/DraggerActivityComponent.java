@@ -6,11 +6,17 @@ import com.est7.demoproject.bean.TaoBean;
 import com.est7.demoproject.bean.UserBean;
 import com.est7.demoproject.module.DraggerActivityModule;
 
+import javax.inject.Singleton;
+
 import dagger.Component;
 
 /**
  * Created by Administrator on 2016/12/6.
+ *
+ * 这里的singleton并不是说这是三个对象都是单例,只是说这里面有单例..单例就是libean,在muodle中可以看出来
+ *
  */
+@Singleton
 @Component(modules = DraggerActivityModule.class)
 public interface DraggerActivityComponent {
 
