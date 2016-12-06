@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_2)
     public void clickBtn2() {
-
+        ActivitySwitcher.entryRetrofitActivty(this);
     }
 
     @OnClick(R.id.btn_3)
