@@ -1,4 +1,4 @@
-package com.est7.demoproject.bean;
+package com.est7.demoproject.dragger.bean;
 
 import com.orhanobut.logger.Logger;
 

@@ -2,9 +2,9 @@ package com.est7.demoproject;
 
 import android.app.Application;
 
-import com.est7.demoproject.component.AppComponent;
-import com.est7.demoproject.component.DaggerAppComponent;
-import com.est7.demoproject.module.AppModule;
+import com.est7.demoproject.dragger.component.AppComponent;
+import com.est7.demoproject.dragger.component.DaggerAppComponent;
+import com.est7.demoproject.dragger.module.AppModule;
 
 /**
  * Created by Administrator.
