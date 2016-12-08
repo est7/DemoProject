@@ -8,7 +8,8 @@
               android:paddingLeft="@dimen/activity_horizontal_margin"
               android:paddingRight="@dimen/activity_horizontal_margin"
               android:paddingTop="@dimen/activity_vertical_margin"
-              tools:context="com.est7.demoproject.mvp.MvpLoginActivity">
+              tools:context="com.est7.demoproject.mvp.MvpLoginActivity"
+              android:weightSum="1">
 
 
     <LinearLayout
@@ -59,4 +60,12 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:visibility="invisible"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_weight="0.22"/>
 </LinearLayout>

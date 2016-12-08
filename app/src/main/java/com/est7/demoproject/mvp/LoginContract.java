@@ -28,6 +28,10 @@ public interface LoginContract {
         void doLogin(String name, String passwd);
 
         void setProgressBarVisiblity(int visiblity);
+
+        void loginFailed();
+
+        void loginSuccess();
     }
 
     interface ILoginModule {
@@ -36,7 +40,7 @@ public interface LoginContract {
 
         String getPasswd();
 
-        boolean checkUserValidity(UserBean bean);
+        void checkUserValidity(UserBean bean);
 
     }
 

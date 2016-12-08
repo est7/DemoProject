@@ -15,8 +15,10 @@ public class UserModule implements LoginContract.ILoginModule {
     private String mEmail;
     private String mPassword;
     private Handler mHandler;
+    private LoginContract.ILoginPresenter mILoginPresenter;
 
-    public UserModule() {
+    public UserModule(LoginContract. ILoginPresenter iLoginPresenter) {
+        mILoginPresenter = iLoginPresenter;
         mHandler = new Handler(Looper.getMainLooper());
     }
 
@@ -37,18 +39,20 @@ public class UserModule implements LoginContract.ILoginModule {
     }
 
     @Override
-    public boolean checkUserValidity(UserBean bean) {
+    public void checkUserValidity(UserBean bean) {
         //用户的账号密码是abc ，123
         //模拟一下异步从网络获取用户信息
         mHandler.postDelayed(() -> {
             if (TextUtils.equals("abc", bean.getEmail()) && TextUtils.equals("123", bean.getPassword())) {
                 mUserInfo = "你已经成功登陆~";
-                return true;
+                mILoginPresenter.loginSuccess();
             } else {
-                return false;
-            }
-        }, 2000);
 
+                mILoginPresenter.loginFailed();
+            }
+
+
+        }, 2000);
 
     }
 }
