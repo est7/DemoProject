@@ -1,4 +1,4 @@
-package com.est7.demoproject.module;
+package com.est7.demoproject.dragger.module;
 
 import android.content.Context;
 
@@ -14,7 +14,7 @@ import dagger.Provides;
  * <p>
  * Created Time : 2016/12/7 2:01.
  * <p>
- * Description : File in com.est7.demoproject.module , Project in DemoProject
+ * Description : File in com.est7.demoproject.dragger.module , Project in DemoProject
  * <p>
  * Content:
  */
@@ -26,6 +26,10 @@ public class AppModule {
         this.context = context;
     }
 
+    /*单例是基于Component的，所以不仅 Provides 的地方要加 @Singleton，Component上也需要加。
+   如果有另外一个OtherActivity，并且创建了一个新的Component，也注入TaoBean，
+  是不构成单例的，因为它们的Component是不同的。
+     */
     @Singleton
     @Provides
     public Context provideContext() {
