@@ -12,7 +12,7 @@ import com.est7.demoproject.retrofit.RetrofitActivity;
 public class ActivitySwitcher {
 
     public static void entryDaggerActivty(Context context) {
-        Intent intent = new Intent(context, DaggerActivity.class);
+        Intent intent = new Intent(context, com.est7.demoproject.dragger.DaggerActivity.class);
         context.startActivity(intent);
 
     }

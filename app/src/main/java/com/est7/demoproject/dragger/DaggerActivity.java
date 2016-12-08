@@ -1,14 +1,15 @@
-package com.est7.demoproject;
+package com.est7.demoproject.dragger;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.est7.demoproject.bean.LiBean;
-import com.est7.demoproject.bean.TaoBean;
-import com.est7.demoproject.bean.UserBean;
-import com.est7.demoproject.component.DaggerDraggerActivityComponent;
-import com.est7.demoproject.module.DraggerActivityModule;
+import com.est7.demoproject.R;
+import com.est7.demoproject.dragger.bean.LiBean;
+import com.est7.demoproject.dragger.bean.TaoBean;
+import com.est7.demoproject.dragger.bean.UserBean;
+import com.est7.demoproject.dragger.component.DaggerDraggerActivityComponent;
+import com.est7.demoproject.dragger.module.DraggerActivityModule;
 
 import javax.inject.Inject;
 
