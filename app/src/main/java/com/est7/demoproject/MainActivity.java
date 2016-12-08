@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_3)
     public void clickBtn3() {
-
+        ActivitySwitcher.entryMVPActivty(this);
     }
 
     @OnClick(R.id.btn_4)
@@ -67,6 +67,5 @@ public class MainActivity extends AppCompatActivity {
     public void clickBtn6() {
 
     }
-    //这是dev分支的内容
 
 }
