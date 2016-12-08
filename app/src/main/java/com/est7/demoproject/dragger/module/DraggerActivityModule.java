@@ -4,8 +4,6 @@ import com.est7.demoproject.dragger.bean.LiBean;
 import com.est7.demoproject.dragger.bean.TaoBean;
 import com.est7.demoproject.dragger.bean.UserBean;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -38,7 +36,6 @@ public class DraggerActivityModule {
         return mTaoName;
     }
 
-    @Singleton
     //component关联的Model中的任何一个被构造的对象有scope，则该整个component要加上这个scope。
     @Provides
     LiBean provideLiBean(TaoBean taoBean) {

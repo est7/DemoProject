@@ -2,8 +2,6 @@ package com.est7.demoproject.dragger.module;
 
 import com.est7.demoproject.dragger.bean.WangBean;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -19,7 +17,6 @@ import dagger.Provides;
 @Module
 public class DraggerActivityOtherModule {
 
-    @Singleton
     @Provides
     WangBean provideWangBean() {
         return new WangBean();

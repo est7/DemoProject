@@ -1,10 +1,10 @@
 package com.est7.demoproject.component;
 
-import com.est7.demoproject.DaggerActivity;
-import com.est7.demoproject.bean.LiBean;
-import com.est7.demoproject.bean.TaoBean;
-import com.est7.demoproject.bean.UserBean;
-import com.est7.demoproject.module.DraggerActivityModule;
+import com.est7.demoproject.dragger.DaggerActivity;
+import com.est7.demoproject.dragger.bean.LiBean;
+import com.est7.demoproject.dragger.bean.TaoBean;
+import com.est7.demoproject.dragger.bean.UserBean;
+import com.est7.demoproject.dragger.module.DraggerActivityModule;
 
 import javax.inject.Singleton;
 

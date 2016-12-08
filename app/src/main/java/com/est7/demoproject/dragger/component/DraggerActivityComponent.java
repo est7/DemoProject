@@ -7,8 +7,7 @@ import com.est7.demoproject.dragger.bean.UserBean;
 import com.est7.demoproject.dragger.bean.WangBean;
 import com.est7.demoproject.dragger.module.DraggerActivityModule;
 import com.est7.demoproject.dragger.module.DraggerActivityOtherModule;
-
-import javax.inject.Singleton;
+import com.est7.demoproject.dragger.scope.ActivityScope;
 
 import dagger.Component;
 
@@ -17,7 +16,8 @@ import dagger.Component;
  * <p>
  * 这里的singleton并不是说这是三个对象都是单例,只是说这里面有单例..单例就是libean,在muodle中可以看出来
  */
-@Singleton //Singleton的组件不能依赖其他scope的组件，只能其他scope的组件依赖Singleton的组件。
+//Singleton的组件不能依赖其他scope的组件，只能其他scope的组件依赖Singleton的组件。
+@ActivityScope
 @Component(modules = {
         DraggerActivityModule.class,
         DraggerActivityOtherModule.class
