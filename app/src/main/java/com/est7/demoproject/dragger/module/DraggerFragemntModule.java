@@ -1,6 +1,7 @@
 package com.est7.demoproject.dragger.module;
 
 import com.est7.demoproject.dragger.bean.ChaoBean;
+import com.est7.demoproject.dragger.scope.FragmentScope;
 
 import javax.inject.Named;
 
@@ -26,6 +27,7 @@ public class DraggerFragemntModule {
         return new ChaoBean("提莫");
     }
 
+    @FragmentScope
     @Named("盖伦")
     @Provides
     public ChaoBean provideGailunChao() {

@@ -22,5 +22,4 @@ public class ActivitySwitcher {
 
     }
 
-    //dev test
 }
