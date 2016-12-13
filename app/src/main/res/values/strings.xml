@@ -10,5 +10,6 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
     <string name="clear">clear</string>
+    <string name="question_mark">详细介绍</string>
 
 </resources>

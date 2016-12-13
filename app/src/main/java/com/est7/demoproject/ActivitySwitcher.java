@@ -26,6 +26,5 @@ public class ActivitySwitcher {
     public static void entryMVPActivty(Context context) {
         Intent intent = new Intent(context, MvpLoginActivity.class);
         context.startActivity(intent);
-
     }
 }
