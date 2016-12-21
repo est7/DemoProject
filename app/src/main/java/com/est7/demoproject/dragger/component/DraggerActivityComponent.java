@@ -20,8 +20,7 @@ import dagger.Component;
 @ActivityScope
 @Component(modules = {
         DraggerActivityModule.class,
-        DraggerActivityOtherModule.class
-},
+        DraggerActivityOtherModule.class},
         dependencies = AppComponent.class)
 public interface DraggerActivityComponent {
 

@@ -3,6 +3,7 @@ package com.est7.demoproject;
 import android.content.Context;
 import android.content.Intent;
 
+import com.est7.demoproject.generic.GenericActivity;
 import com.est7.demoproject.mvp.MvpLoginActivity;
 import com.est7.demoproject.retrofit.RetrofitActivity;
 
@@ -26,5 +27,10 @@ public class ActivitySwitcher {
     public static void entryMVPActivty(Context context) {
         Intent intent = new Intent(context, MvpLoginActivity.class);
         context.startActivity(intent);
+    }
+    public static void entryGenericActivity(Context context) {
+        Intent intent = new Intent(context, GenericActivity.class);
+        context.startActivity(intent);
+
     }
 }

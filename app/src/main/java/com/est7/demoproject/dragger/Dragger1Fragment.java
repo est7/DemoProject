@@ -14,10 +14,10 @@ public class Dragger1Fragment extends Fragment {
 
     @Inject
     @Named("提莫") //添加标记@Name("typeA")，只获取对应的@Name("typeA")的元依赖
-            ChaoBean mChaoBean;
+     ChaoBean mChaoBean;
     @Inject
     @Named("盖伦") //添加标记@Name("typeA")，只获取对应的@Name("typeA")的依赖
-            ChaoBean mChaoBean1;
+    ChaoBean mChaoBean1;
 
     public Dragger1Fragment() {
 

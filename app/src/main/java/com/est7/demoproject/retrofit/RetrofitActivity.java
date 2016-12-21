@@ -105,6 +105,7 @@ public class RetrofitActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.e(TAG, "get1: " + response.body());
+
             }
 
             @Override

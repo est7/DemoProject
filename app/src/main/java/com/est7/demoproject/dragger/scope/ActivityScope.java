@@ -40,7 +40,7 @@ public @interface ActivityScope {
     //还有,对于这个自定义的域
     //如果被依赖的 Component 使用了Scope，那么依赖他的 Component 也必须使用Scope才能使用。
     // 典型例子就是：代码中ActivityComponent dependencies  AppComponent
-    // 所以由于AppComponent使用了 Scope，那么ActivityComponent也必须使用Scope(要求必须不是相同的域)，否则会编译出错。
+    // 所以由于AppComponent使用了 Scope，那么ActivityComponent也必须使用Scope(要求必须是相同的域)，否则会编译出错。
     //Singleton的组件不能依赖其他scope的组件，只能其他scope的组件依赖Singleton的组件。
     //没有scope的不能依赖有scope的组件，理解一下。。。
 }

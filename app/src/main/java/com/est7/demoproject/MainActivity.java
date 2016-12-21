@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_4)
     public void clickBtn4() {
-
+        ActivitySwitcher.entryGenericActivity(this);
     }
 
     @OnClick(R.id.btn_5)

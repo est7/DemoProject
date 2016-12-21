@@ -5,6 +5,7 @@ import android.app.Application;
 import com.est7.demoproject.dragger.component.AppComponent;
 import com.est7.demoproject.dragger.component.DaggerAppComponent;
 import com.est7.demoproject.dragger.module.AppModule;
+import com.est7.demoproject.utils.ToastUtil;
 
 /**
  * Created by Administrator.
@@ -24,6 +25,11 @@ public class DemoProjectApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initDI();
+        initToast();
+    }
+    //吐司初始化
+    private void initToast() {
+        ToastUtil.init(getApplicationContext());
     }
 
     private void initDI() {

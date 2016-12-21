@@ -53,7 +53,6 @@ public class MvpLoginActivity extends AppCompatActivity implements LoginContract
     @Override
     public void doLogin() {
         mLoginPresenterCompl.doLogin(mEmail.getText().toString(), mPassword.getText().toString());
-
         mLoginPresenterCompl.setProgressBarVisiblity(VISIBLE);
 
     }
