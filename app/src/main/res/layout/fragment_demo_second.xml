@@ -6,4 +6,9 @@
 
 
     <include layout="@layout/tip_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
