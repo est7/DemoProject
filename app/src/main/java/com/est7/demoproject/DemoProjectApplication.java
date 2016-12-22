@@ -1,6 +1,7 @@
 package com.est7.demoproject;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.est7.demoproject.dragger.component.AppComponent;
 import com.est7.demoproject.dragger.component.DaggerAppComponent;
@@ -20,10 +21,16 @@ import com.est7.demoproject.utils.ToastUtil;
 public class DemoProjectApplication extends Application {
 
     private AppComponent mAppComponent;
+    private static Context  mDemoProjectApplication;
+
+    public static Context getInstance() {
+        return mDemoProjectApplication;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        mDemoProjectApplication = this;
         initDI();
         initToast();
     }

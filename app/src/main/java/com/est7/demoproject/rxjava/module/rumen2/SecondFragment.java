@@ -5,14 +5,18 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.est7.demoproject.R;
+import com.est7.demoproject.retrofit.HttpMananger;
 import com.est7.demoproject.rxjava.BaseFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
-import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2016/12/13.
@@ -20,6 +24,9 @@ import io.reactivex.Scheduler;
 
 public class SecondFragment extends BaseFragment {
 
+
+    @BindView(R.id.tv_content)
+    TextView mTvContent;
 
     @Nullable
     @Override
@@ -45,16 +52,34 @@ public class SecondFragment extends BaseFragment {
 
     //    创建线程
     private void demo1() {
-        Observable.create((ObservableEmitter<Integer> e) -> {
-            //empty method
-        }).subscribeOn(Scheduler)
-                .observeOn()
-                .subscribe((integer -> {
-                            //empty methid
+        Observable
+                .create((ObservableEmitter<String> e) -> {
 
-                        })
-                );
+                        }
+                ).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(s -> {
 
+                });
 
     }
+
+
+    //简单结合retrofit
+    private void demo2() {
+        HttpMananger.getWeather("济宁")
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(weatherBaseBean -> {
+                    mTvContent.setText(weatherBaseBean.getData().getWendu());
+                });
+    }
+
+
+    //map-->
+    private void demo3() {
+
+    }
+
+
 }
