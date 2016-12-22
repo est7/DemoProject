@@ -47,5 +47,7 @@ public class GenericActivity extends AppCompatActivity {
 
         String 我要测试一波 = new String("我要测试一波");
 
+        String 我要测试第二波 = new String("我要测试第二波");
+
     }
 }
