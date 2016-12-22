@@ -45,6 +45,9 @@ public class GenericActivity extends AppCompatActivity {
 
         ToastUtil.show(((PigSister)hangHeroPool.getHero()).name+"航哥");
 
+        String 我要测试一波 = new String("我要测试一波");
+
+        String 我要测试第二波 = new String("我要测试第二波");
 
     }
 }
