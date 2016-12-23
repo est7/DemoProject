@@ -5,6 +5,7 @@ import com.est7.demoproject.retrofit.bean.Weather;
 
 import java.util.Map;
 
+import io.reactivex.Flowable;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -31,4 +32,9 @@ public interface IUser {
 
     @POST("list")
     Call<String> getList(@QueryMap Map<String ,String> params);
+
+    @GET("weather_mini")
+    Flowable<BaseBean<Weather>> getWeather3(@Query("city") String cityname);
+
+
 }
