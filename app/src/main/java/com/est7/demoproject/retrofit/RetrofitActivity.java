@@ -190,8 +190,5 @@ public class RetrofitActivity extends AppCompatActivity {
 
     private void upload() {
 
-
-
     }
-
 }
