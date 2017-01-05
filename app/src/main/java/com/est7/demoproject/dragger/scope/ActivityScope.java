@@ -65,6 +65,11 @@ public @interface ActivityScope {
 
          所以component依赖关系之间,要求必须是不同的scope;
 
+
+         关于@Qualifier限定符
+         这个没几把用,主要作用就是区分返回类型相同的情况(高大上叫做:依赖迷失),@Named是本身提供的一个用@Qualifier标注过的注解,所以没必要使用自定义qualifier来
+         解决依赖迷失问题;
+
      */
 
 
