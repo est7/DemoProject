@@ -12,7 +12,6 @@ package com.est7.demoproject.generic;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.est7.demoproject.generic.bean.Hero;
 import com.est7.demoproject.generic.bean.HeroPool;
 import com.est7.demoproject.generic.bean.PigSister;
 import com.est7.demoproject.generic.bean.Tank;
@@ -41,13 +40,10 @@ public class GenericActivity extends AppCompatActivity {
        // ToastUtil.show(chaoHeroPool.getHero().name);
 
         //规定航哥不能玩猪妹
-       HeroPool<? super Tank> hangHeroPool= new HeroPool<Hero>(new VN("猪妹"));
+       HeroPool<? super Tank> hangHeroPool= new HeroPool<>(new VN("猪妹"));
 
         ToastUtil.show(((PigSister)hangHeroPool.getHero()).name+"航哥");
 
-        String 我要测试一波 = new String("我要测试一波");
-
-        String 我要测试第二波 = new String("我要测试第二波");
 
     }
 }

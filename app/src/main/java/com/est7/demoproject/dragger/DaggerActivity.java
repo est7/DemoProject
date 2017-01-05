@@ -69,7 +69,7 @@ public class DaggerActivity extends AppCompatActivity {
                 .draggerActivityModule(new DraggerActivityModule("菜狗"))
                 .build()
                 .inject(this);
-        //此时mUserbean就被注入了
+         //此时mUserbean就被注入了
 
     }
 

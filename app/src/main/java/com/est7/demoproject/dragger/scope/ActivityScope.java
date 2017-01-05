@@ -40,7 +40,32 @@ public @interface ActivityScope {
     //还有,对于这个自定义的域
     //如果被依赖的 Component 使用了Scope，那么依赖他的 Component 也必须使用Scope才能使用。
     // 典型例子就是：代码中ActivityComponent dependencies  AppComponent
-    // 所以由于AppComponent使用了 Scope，那么ActivityComponent也必须使用Scope(要求必须是相同的域)，否则会编译出错。
+    // 所以由于AppComponent使用了 Scope，那么ActivityComponent也必须使用Scope(要求必须是不同的域)，否则会编译出错。
     //Singleton的组件不能依赖其他scope的组件，只能其他scope的组件依赖Singleton的组件。
     //没有scope的不能依赖有scope的组件，理解一下。。。
+
+
+    /*
+         这里是我理解的Scope的作用:
+         首先看一个使用@Scope注解的注解@Singleton,
+         Singleton就是单例的意思,但是这个单例是基于Component的,
+         两个不同的component是无法产生单例的依赖;
+         所以我们要获得全局的单例,就必须控制component的唯一性,所以在application中初始化
+         component是较好的选择;
+         如果我们仅仅要求在当前activity中是单例,在activity中初始化component是较好的选择.
+         使用scope管理依赖的生命周期,实际是就是通过初始化目标类的同时初始化component,目标类消亡的时候
+         销毁component,达到同生共死的目的;
+
+         (这一段中的scope指的是使用过@scope标注过的注解,就像@Singleton)
+         Scope还有的一个作用是管理component与module的对应关系,如果module中使用了scope,那么component中必须使用相同的
+         scope,如果两个module对应一个component且两个module中使用了不同的scope,那么component中必须使用两个scope,简单说
+         一个component的对应的module(不管几个)中使用了不管几个scope,那么这个component也必须使用相同的scope
+
+         scope的另一个作用是管理component之间的依赖(dependencies),包含(SubComponent)关系,这个航哥已经解释过了;
+
+         所以component依赖关系之间,要求必须是不同的scope;
+
+     */
+
+
 }
