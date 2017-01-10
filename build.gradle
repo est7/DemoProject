@@ -18,6 +18,7 @@ allprojects {
         jcenter()
         // Required because retrolambda is on maven central
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
 

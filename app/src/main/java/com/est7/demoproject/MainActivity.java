@@ -60,12 +60,17 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_5)
     public void clickBtn5() {
-
+        ActivitySwitcher.entryBottomDialogActivity(this);
     }
 
     @OnClick(R.id.btn_6)
     public void clickBtn6() {
+        ActivitySwitcher.entryRxjavaActivity(this);
+    }
 
+    @OnClick(R.id.btn_7)
+    public void clickBtn7() {
+        ActivitySwitcher.entryDiyViewActivity(this);
     }
 
 }

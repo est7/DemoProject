@@ -30,22 +30,25 @@
 
     <Button
         android:id="@+id/btn_4"
-        android:text="GENERIC"
+        android:text="generic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn_5"
         android:layout_width="match_parent"
+        android:text="BottomDialog+Js"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn_6"
         android:layout_width="match_parent"
+        android:text="rxjava"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn_7"
+        android:text="DiyView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

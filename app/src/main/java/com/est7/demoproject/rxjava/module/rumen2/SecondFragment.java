@@ -65,7 +65,21 @@ public class SecondFragment extends BaseFragment {
 
 
     //    创建线程
-    private void demo1() {
+
+    /*
+        用于创建Observable的操作符
+
+        Create — 通过调用观察者的方法从头创建一个
+        ObservableDefer — 在观察者订阅之前不创建这个Observable，为每一个观察者创建一个新的Observable
+        Empty/Never/Throw — 创建行为受限的特殊ObservableFrom — 将其它的对象或数据结构转换为Observable
+        Interval — 创建一个定时发射整数序列的Observable
+        Just — 将对象或者对象集合转换为一个会发射这些对象的Observable
+        Range — 创建发射指定范围的整数序列的Observable
+        Repeat — 创建重复发射特定的数据或数据序列的Observable
+        Start — 创建发射一个函数的返回值的Observable
+        Timer — 创建在一个指定的延迟之后发射单个数据的Observable
+     */
+    public void demo1() {
         Observable
                 .create((ObservableEmitter<String> e) -> {
 
@@ -80,7 +94,7 @@ public class SecondFragment extends BaseFragment {
 
 
     //简单结合retrofit
-    private void demo2() {
+    public void demo2() {
         HttpMananger.getWeather("济宁")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -91,7 +105,7 @@ public class SecondFragment extends BaseFragment {
 
 
     //map-->输出温度值的hashcode，map可以理解为1对1的变换，可以任意把一个类型转变成另外一种类型
-    private void demo3() {
+    public void demo3() {
         HttpMananger.getWeather("济宁")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -103,7 +117,7 @@ public class SecondFragment extends BaseFragment {
 
     //flatMap()-->打印出未来5天的天气预报，flatMap可以理解为1对多的的变换，可以任意把一个类型转变成多个另外一种类型,这里就相当于把一个weatherBean
     //转换成5个forecastBean;
-    private void demo4() {
+    public void demo4() {
         HttpMananger.getWeather("济宁")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -121,7 +135,7 @@ public class SecondFragment extends BaseFragment {
     }
 
     //线程的切换
-    private void demo5() {
+    public void demo5() {
         HttpMananger.getWeather("济宁")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//指定接下来的操作在主线程,如果不指定,默认是子线程的
@@ -149,7 +163,7 @@ public class SecondFragment extends BaseFragment {
     }
 
     //比较贴近真实情况下的网络嵌套请求问题，获取上海的天气前先获取一下济宁的天气。
-    private void demo6() {
+    public void demo6() {
         HttpMananger.getWeather("济宁")
                 .subscribeOn(Schedulers.io())
                 .flatMap(new Function<BaseBean<Weather>, Observable<BaseBean<Weather>>>() {
@@ -172,7 +186,7 @@ public class SecondFragment extends BaseFragment {
 
     //发送速度大于处理速度,无法被及时处理的数据堆积在上游,造成内存拥堵,直到OOM;
     // 同样的代码在1.0中会抛出异常MissingBackpressureException,原因是interval操作符本身是不支持背压的,因为他的发送速度不可控制;
-    private void demo7() {
+    public void demo7() {
         Observable.interval(1, TimeUnit.MILLISECONDS)
                 .observeOn(Schedulers.newThread())
                 //观察者处理每1000ms才处理一个事件
@@ -215,7 +229,7 @@ public class SecondFragment extends BaseFragment {
 
     //使用range操作来发送100W个数据,这时候,内存也会增长,但是增长速度比较慢,原因是range操作符是支持背压的,他背压的策略是缓存,
     //资料上说,observeOn这个操作符内部有一个缓冲区，Android环境下长度是16，它会告诉range最多发送16个事件，充满缓冲区即可;
-    private void demo8() {
+    public void demo8() {
         Observable.range(1, 1000000)
                 .observeOn(Schedulers.newThread())
                 //观察者1秒处理一个事件
@@ -252,7 +266,7 @@ public class SecondFragment extends BaseFragment {
 
 
     //这里会报错,原因在于interval是不支持背压的,request也不能在这使用.
-    private void demo9() {
+    public void demo9() {
         Flowable.interval(1, TimeUnit.MILLISECONDS)
                 //.onBackpressureBuffer(),使用这个操作符,可以使本来不支持响应式拉取的变成支持;
                 .observeOn(Schedulers.newThread())
@@ -263,8 +277,9 @@ public class SecondFragment extends BaseFragment {
                     @Override
                     public void onSubscribe(Subscription s) {
                         mSub = s;
-                        mSub.request(10);//这里的request是必须调用的且request(0)是非法的,不调用是不会发送事件的,这里是要求请求5个,但是只发送出一个后就报错
+                        mSub.request(10);//这里的request是必须调用的且request(0)是非法的,不调用是不会发送事件的,这里是要求请求10个,但是只发送出一个后就报错
                     }
+
                     @Override
                     public void onNext(Long aLong) {
                         try {
@@ -272,8 +287,8 @@ public class SecondFragment extends BaseFragment {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        Log.e("TAG", "打印: "+aLong );
-                       // mSub.request(1);这里请求不请求都会报错;
+                        Log.e("TAG", "打印: " + aLong);
+                        // mSub.request(1);这里请求不请求都会报错;
                     }
 
                     @Override
@@ -291,8 +306,8 @@ public class SecondFragment extends BaseFragment {
     }
 
     //使用request响应式拉去,拉取一个处理一个;
-    private void demo10() {
-         Flowable.range(0, 1000000)
+    public void demo10() {
+        Flowable.range(0, 1000000)
                 .observeOn(Schedulers.newThread())
                 //观察者处理每1000ms才处理一个事件
                 .subscribe(new Subscriber<Integer>() {
