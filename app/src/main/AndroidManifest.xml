@@ -39,6 +39,12 @@
         </activity>
         <activity android:name=".jsbridge.ViewActivity">
         </activity>
+        <activity android:name=".allstatusview.StatusActivity">
+        </activity>
+        <activity android:name=".swipeback.SwipBackActivity">
+        </activity>
+        <activity android:name=".expandtext.ExpandTextActivity">
+        </activity>
     </application>
 
 </manifest>

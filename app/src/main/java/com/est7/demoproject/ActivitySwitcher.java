@@ -3,6 +3,8 @@ package com.est7.demoproject;
 import android.content.Context;
 import android.content.Intent;
 
+import com.est7.demoproject.allstatusview.StatusActivity;
+import com.est7.demoproject.expandtext.ExpandTextActivity;
 import com.est7.demoproject.generic.GenericActivity;
 import com.est7.demoproject.jsbridge.ViewActivity;
 import com.est7.demoproject.mvp.MvpLoginActivity;
@@ -20,6 +22,7 @@ public class ActivitySwitcher {
         context.startActivity(intent);
 
     }
+
     public static void entryRetrofitActivty(Context context) {
         Intent intent = new Intent(context, RetrofitActivity.class);
         context.startActivity(intent);
@@ -30,6 +33,7 @@ public class ActivitySwitcher {
         Intent intent = new Intent(context, MvpLoginActivity.class);
         context.startActivity(intent);
     }
+
     public static void entryGenericActivity(Context context) {
         Intent intent = new Intent(context, GenericActivity.class);
         context.startActivity(intent);
@@ -49,5 +53,21 @@ public class ActivitySwitcher {
     public static void entryDiyViewActivity(Context context) {
         Intent intent = new Intent(context, ViewActivity.class);
         context.startActivity(intent);
+    }
+
+    public static void entryStatusActivity(Context context) {
+        Intent intent = new Intent(context, StatusActivity.class);
+        context.startActivity(intent);
+
+    }
+
+    public static void entryExpandTextActivity(Context context) {
+        Intent intent = new Intent(context, ExpandTextActivity.class);
+        context.startActivity(intent);
+    }
+
+    public static void entryDayNightActivity(Context context) {
+        //Intent intent = new Intent(context, );
+        // context.startActivity(intent);
     }
 }

@@ -73,4 +73,22 @@ public class MainActivity extends AppCompatActivity {
         ActivitySwitcher.entryDiyViewActivity(this);
     }
 
+
+    @OnClick(R.id.btn_8)
+    public void clickBtn8() {
+        ActivitySwitcher.entryStatusActivity(this);
+    }
+
+
+    @OnClick(R.id.btn_9)
+    public void clickBtn9() {
+        ActivitySwitcher.entryExpandTextActivity(this);
+    }
+
+    @OnClick(R.id.btn_10)
+    public void clickBtn10() {
+
+        ActivitySwitcher.entryDayNightActivity(this);
+    }
+
 }

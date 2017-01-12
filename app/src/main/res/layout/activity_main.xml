@@ -54,11 +54,19 @@
 
     <Button
         android:id="@+id/btn_8"
+        android:text="viewstatuschange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
+        android:text="expandtext"
         android:id="@+id/btn_9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="day-night"
+        android:id="@+id/btn_10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
