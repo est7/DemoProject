@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.est7.demoproject.R;
+import com.est7.demoproject.diyview.ClockView;
 import com.est7.demoproject.diyview.RefreshView;
 
 import butterknife.BindView;
@@ -18,6 +19,10 @@ public class ViewActivity extends AppCompatActivity {
     RefreshView mRefreshView;
     @BindView(R.id.btn_click)
     Button mBtnClick;
+    @BindView(R.id.clockView)
+    ClockView mClockView;
+    @BindView(R.id.btn_clock)
+    Button mBtnClock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,13 @@ public class ViewActivity extends AppCompatActivity {
     public void onClick() {
         mRefreshView.setDuration(3000);
         mRefreshView.startRefresh();
+
+
+    }
+
+    @OnClick(R.id.btn_clock)
+    public void onClickClock() {
+        mClockView.triangleAnim();
 
 
     }
