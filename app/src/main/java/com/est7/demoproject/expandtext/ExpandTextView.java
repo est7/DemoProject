@@ -130,7 +130,7 @@ public class ExpandTextView extends LinearLayout implements View.OnClickListener
         mHintView.setTextColor(hintTextColor);
 
         if (indicateImage == null) {
-            indicateImage = getResources().getDrawable(R.mipmap.ic_launcher);
+            indicateImage = getResources().getDrawable(R.drawable.ic_life);
         }
         mIndicateImage.setImageDrawable(indicateImage);
         mShowMore.setOnClickListener(this);
