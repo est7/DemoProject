@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:text="day-night"
+        android:text="diy-list-viewpager"
         android:id="@+id/btn_10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

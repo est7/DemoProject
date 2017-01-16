@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_10)
     public void clickBtn10() {
 
-        ActivitySwitcher.entryDayNightActivity(this);
+        ActivitySwitcher.entrydiyListViewPagerActivity(this);
     }
 
 }

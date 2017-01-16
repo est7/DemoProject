@@ -3,6 +3,7 @@ package com.est7.demoproject;
 import android.content.Context;
 import android.content.Intent;
 
+import com.est7.demoproject.ListViewPager.ListViewPagerActivity;
 import com.est7.demoproject.allstatusview.StatusActivity;
 import com.est7.demoproject.expandtext.ExpandTextActivity;
 import com.est7.demoproject.generic.GenericActivity;
@@ -66,8 +67,8 @@ public class ActivitySwitcher {
         context.startActivity(intent);
     }
 
-    public static void entryDayNightActivity(Context context) {
-        //Intent intent = new Intent(context, );
-        // context.startActivity(intent);
+    public static void entrydiyListViewPagerActivity(Context context) {
+        Intent intent = new Intent(context, ListViewPagerActivity.class);
+        context.startActivity(intent);
     }
 }

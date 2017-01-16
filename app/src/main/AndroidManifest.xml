@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".expandtext.ExpandTextActivity">
         </activity>
+        <activity android:name=".ListViewPager.ListViewPagerActivity">
+        </activity>
     </application>
 
 </manifest>
