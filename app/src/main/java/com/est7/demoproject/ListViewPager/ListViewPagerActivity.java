@@ -76,7 +76,7 @@ public class ListViewPagerActivity extends AppCompatActivity {
         list.add(this.getResources().getDrawable(R.mipmap.ic_launcher));
         list.add(this.getResources().getDrawable(R.mipmap.ic_launcher));
 
-        mVpList.setAdapter(new LisViewPagerAdapter(list, 8, this));
+        mVpList.setAdapter(new LisViewPagerAdapter(this,list, 7));
 
     }
 }
