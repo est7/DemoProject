@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Administrator on 2017/1/16.
  */
 
-public class ListViewPager extends FrameLayout {
+public class ListViewPager extends LinearLayout {
 
     private List<? extends View> mList;
     private int mNum = 8;
@@ -39,17 +39,19 @@ public class ListViewPager extends FrameLayout {
 
     private void initViews() {
 
+        this.setOrientation(VERTICAL);
+        this.setGravity(Gravity.CENTER);
 
         mViewPager = new ViewPager(mContext);
         ViewPager.LayoutParams lp = new ViewPager.LayoutParams();
-        lp.width = ViewPager.LayoutParams.MATCH_PARENT;
-        lp.height = ViewPager.LayoutParams.MATCH_PARENT;
+        lp.width = ViewPager.LayoutParams.WRAP_CONTENT;
+        lp.height = ViewPager.LayoutParams.WRAP_CONTENT;
         mViewPager.setLayoutParams(lp);
         // addView(mViewPager, viewPgaerLp);
 
         mViewPagerIndicator = new ViewPagerIndicator(mContext);
-        FrameLayout.LayoutParams indicatorlp = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        indicatorlp.gravity = Gravity.BOTTOM | Gravity.CENTER;
+        LinearLayout.LayoutParams indicatorlp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        indicatorlp.gravity = Gravity.CENTER;
         indicatorlp.bottomMargin = 20;
         mViewPagerIndicator.setLayoutParams(indicatorlp);
         //addView(mViewPagerIndicator, indicatorlp);

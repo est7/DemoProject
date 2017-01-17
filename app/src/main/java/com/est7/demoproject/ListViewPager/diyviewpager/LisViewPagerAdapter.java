@@ -2,15 +2,12 @@ package com.est7.demoproject.ListViewPager.diyviewpager;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
-
-import com.est7.demoproject.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +16,10 @@ import java.util.List;
  * Created by Administrator on 2017/1/16.
  */
 
+
 public class LisViewPagerAdapter extends PagerAdapter {
 
-    private List<ListView> mList;
+    private List<RecyclerView> mList;
     private int mNum = 8;
     private Context mContext;
 
@@ -33,7 +31,7 @@ public class LisViewPagerAdapter extends PagerAdapter {
             mNum = (int) num;
         }
 
-        mList = new ArrayList<ListView>();
+        mList = new ArrayList<RecyclerView>();
 
         //地板数
         double floor = Math.floor(drawables.size() / num);
@@ -45,38 +43,23 @@ public class LisViewPagerAdapter extends PagerAdapter {
 
 
         List<Drawable> listViewdrawables = null;
+
+
         for (int i1 = 0; i1 < i; i1++) {
             if (i1 >= j) {
                 listViewdrawables = drawables.subList(i1 * mNum, drawables.size());
             } else {
                 listViewdrawables = drawables.subList(i1 * mNum, (i1 + 1) * mNum);
             }
-            ListView listView = new ListView(context);
+            RecyclerView recyclerView = new RecyclerView(context);
+            recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+            RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT,RecyclerView.LayoutParams.WRAP_CONTENT);
+            recyclerView.setLayoutParams(lp);
 
-            listView.setAdapter(new ArrayAdapter<Drawable>(context, R.layout.image_view, R.id.image, listViewdrawables) {
-                @NonNull
-                @Override
-                public View getView(int position, View convertView, ViewGroup parent) {
-
-                    final ImageView imageView;
-
-                    if (convertView == null) {
-                        imageView = new ImageView(mContext);
-                    } else {
-                        imageView = (ImageView) convertView;
-                    }
-
-                    Drawable item = getItem(position);
-
-                    if (item instanceof Drawable) {
-                        imageView.setImageDrawable(item);
-                    }
-                    return imageView;
-
-                }
-            });
-
-            mList.add(listView);
+            BadgeRecyclerAdapter adapter = new BadgeRecyclerAdapter();
+            adapter.setUrlData(listViewdrawables);
+            recyclerView.setAdapter(adapter);
+            mList.add(recyclerView);
         }
     }
 
@@ -109,5 +92,49 @@ public class LisViewPagerAdapter extends PagerAdapter {
         }
         container.addView(view);
         return view;
+    }
+
+
+    class BadgeRecyclerAdapter extends RecyclerView.Adapter<BadgeViewHodler> {
+
+        private List<Drawable> mBadgeDataList;
+
+        @Override
+        public BadgeViewHodler onCreateViewHolder(ViewGroup parent, int viewType) {
+            ImageView imageView = new ImageView(mContext);
+
+            BadgeViewHodler actorBadgeViewHodler = new BadgeViewHodler(imageView);
+
+            return actorBadgeViewHodler;
+        }
+
+        @Override
+        public void onBindViewHolder(BadgeViewHodler holder, int position) {
+            ImageView iv_actor_badge = holder.iv_badge;
+            Drawable drawable = mBadgeDataList.get(position);
+            iv_actor_badge.setImageDrawable(drawable);
+        }
+
+        @Override
+        public int getItemCount() {
+            return mBadgeDataList.size();
+        }
+
+        public void setUrlData(List badgeDataList) {
+            mBadgeDataList = badgeDataList;
+
+        }
+    }
+
+
+    class BadgeViewHodler extends RecyclerView.ViewHolder {
+
+        private final ImageView iv_badge;
+
+        public BadgeViewHodler(View itemView) {
+            super(itemView);
+            iv_badge = (ImageView) itemView;
+
+        }
     }
 }
