@@ -7,12 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.est7.demoproject.ListViewPager.ListViewPagerActivity">
 
-
-    <com.est7.demoproject.ListViewPager.diyviewpager.ListViewPager
-        android:layout_width="match_parent"
-        android:id="@+id/vp_list"
-        android:layout_height="wrap_content">
-
-    </com.est7.demoproject.ListViewPager.diyviewpager.ListViewPager>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_1"
+        android:text="click"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
