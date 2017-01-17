@@ -52,32 +52,24 @@ public class ShowerCard {
 
 
         List list = new ArrayList<Drawable>();
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
-        list.add(mContext.getResources().getDrawable(R.mipmap.ic_launcher));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
+        list.add(mContext.getResources().getDrawable(R.mipmap.rc_item_add_already_user));
 
-        mRcBadgeList.setAdapter(new LisViewPagerAdapter(mContext,list, 7 ));
+        mRcBadgeList.setAdapter(new LisViewPagerAdapter(mContext,list, 4 ));
     }
 
     public void showDialog(String vsId, String showerId, String actionVsId) {

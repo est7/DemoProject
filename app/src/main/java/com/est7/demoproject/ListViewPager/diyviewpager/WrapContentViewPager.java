@@ -32,7 +32,7 @@ public class WrapContentViewPager extends ViewPager {
             view.measure(widthMeasureSpec, heightMeasureSpec);
         }
 
-        setMeasuredDimension(getMeasuredWidth(), measureHeight(heightMeasureSpec, view));
+        setMeasuredDimension(measureWight(widthMeasureSpec,view), measureHeight(heightMeasureSpec, view));
     }
 
     /**
@@ -54,6 +54,33 @@ public class WrapContentViewPager extends ViewPager {
             // set the height from the base view if available
             if (view != null) {
                 result = view.getMeasuredHeight();
+            }
+            if (specMode == MeasureSpec.AT_MOST) {
+                result = Math.min(result, specSize);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Determines the height of this view
+     *
+     * @param measureSpec A measureSpec packed into an int
+     * @param view the base view with already measured height
+     *
+     * @return The height of the view, honoring constraints from measureSpec
+     */
+    private int measureWight(int measureSpec, View view) {
+        int result = 0;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+
+        if (specMode == MeasureSpec.EXACTLY) {
+            result = specSize;
+        } else {
+            // set the height from the base view if available
+            if (view != null) {
+                result = view.getMeasuredWidth();
             }
             if (specMode == MeasureSpec.AT_MOST) {
                 result = Math.min(result, specSize);

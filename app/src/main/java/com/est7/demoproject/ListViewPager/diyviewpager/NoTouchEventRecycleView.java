@@ -18,12 +18,8 @@ public class NoTouchEventRecycleView extends RecyclerView {
 
     public NoTouchEventRecycleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        init();
-    }
 
-    private void init() {
     }
-
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {

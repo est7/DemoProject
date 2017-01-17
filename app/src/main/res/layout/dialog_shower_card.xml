@@ -254,5 +254,15 @@
 
 
 
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher"
+       />
+
+
+
 
 </FrameLayout>
