@@ -10,13 +10,13 @@ import android.view.MotionEvent;
  * Created by Administrator on 2017/1/17.
  */
 
-public class MyRecycleView extends RecyclerView {
-    public MyRecycleView(Context context) {
+public class NoTouchEventRecycleView extends RecyclerView {
+    public NoTouchEventRecycleView(Context context) {
         super(context,null);
 
     }
 
-    public MyRecycleView(Context context, @Nullable AttributeSet attrs) {
+    public NoTouchEventRecycleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }

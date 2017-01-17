@@ -42,34 +42,34 @@ public class ListViewPager extends LinearLayout {
         this.setOrientation(VERTICAL);
         this.setGravity(Gravity.CENTER);
 
-        mViewPager = new ViewPager(mContext);
-        ViewPager.LayoutParams lp = new ViewPager.LayoutParams();
+
+      mViewPager = new WrapContentViewPager(mContext);
+          ViewPager.LayoutParams lp = new ViewPager.LayoutParams();
         lp.width = ViewPager.LayoutParams.WRAP_CONTENT;
         lp.height = ViewPager.LayoutParams.WRAP_CONTENT;
+
         mViewPager.setLayoutParams(lp);
-        // addView(mViewPager, viewPgaerLp);
 
         mViewPagerIndicator = new ViewPagerIndicator(mContext);
         LinearLayout.LayoutParams indicatorlp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         indicatorlp.gravity = Gravity.CENTER;
         indicatorlp.bottomMargin = 20;
         mViewPagerIndicator.setLayoutParams(indicatorlp);
-        //addView(mViewPagerIndicator, indicatorlp);
+
     }
 
 
-    public void setAdapter(LisViewPagerAdapter adapter){
+    public void setAdapter(LisViewPagerAdapter adapter) {
 
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                setIndicator(position,positionOffset);
+                setIndicator(position, positionOffset);
             }
 
             @Override
             public void onPageSelected(int position) {
-
             }
 
             @Override
@@ -78,18 +78,17 @@ public class ListViewPager extends LinearLayout {
             }
         });
 
+        LinearLayout.LayoutParams indicatorlp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        addView(mViewPager);
-
+        addView(mViewPager, indicatorlp);
         mViewPagerIndicator.setItemCount(adapter.getCount());
         addView(mViewPagerIndicator);
 
 
     }
-    private void setIndicator(int position,float offset){
-        mViewPagerIndicator.setPositionAndOffset(position,offset);
+
+    private void setIndicator(int position, float offset) {
+        mViewPagerIndicator.setPositionAndOffset(position, offset);
     }
-
-
 
 }

@@ -3,7 +3,6 @@ package com.est7.demoproject.ListViewPager.diyviewpager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -52,7 +51,7 @@ public class LisViewPagerAdapter extends PagerAdapter {
             } else {
                 listViewdrawables = drawables.subList(i1 * mNum, (i1 + 1) * mNum);
             }
-            MyRecycleView recyclerView = new MyRecycleView(context);
+            NoTouchEventRecycleView recyclerView = new NoTouchEventRecycleView(context);
             recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
             RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT,RecyclerView.LayoutParams.WRAP_CONTENT);
             recyclerView.setLayoutParams(lp);
@@ -91,12 +90,7 @@ public class LisViewPagerAdapter extends PagerAdapter {
         if (parent != null) {
             parent.removeView(view);
         }
-
-
-        ViewPager.LayoutParams indicatorlp = new ViewPager.LayoutParams();
-        indicatorlp.width = ViewPager.LayoutParams.WRAP_CONTENT;
-        indicatorlp.width = ViewPager.LayoutParams.WRAP_CONTENT;
-        container.addView(view,indicatorlp);
+        container.addView(view);
         return view;
     }
 
@@ -108,7 +102,6 @@ public class LisViewPagerAdapter extends PagerAdapter {
         @Override
         public BadgeViewHodler onCreateViewHolder(ViewGroup parent, int viewType) {
             ImageView imageView = new ImageView(mContext);
-
             BadgeViewHodler actorBadgeViewHodler = new BadgeViewHodler(imageView);
 
             return actorBadgeViewHodler;

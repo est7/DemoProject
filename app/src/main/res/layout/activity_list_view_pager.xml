@@ -9,7 +9,7 @@
 
 
     <com.est7.demoproject.ListViewPager.diyviewpager.ListViewPager
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:id="@+id/vp_list"
         android:layout_height="wrap_content">
 
