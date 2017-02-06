@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -9,64 +9,85 @@
     android:orientation="vertical"
     tools:context="com.est7.demoproject.MainActivity">
 
-    <Button
-        android:id="@+id/btn_1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:text="dargger2"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dargger2"/>
 
 
-    <Button
-        android:id="@+id/btn_2"
-        android:text="retrofit2.0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="retrofit2.0"/>
 
-    <Button
-        android:id="@+id/btn_3"
-        android:text="MVP-Login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MVP-Login"/>
 
-    <Button
-        android:id="@+id/btn_4"
-        android:text="generic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="generic"/>
 
-    <Button
-        android:id="@+id/btn_5"
-        android:layout_width="match_parent"
-        android:text="BottomDialog+Js"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BottomDialog+Js"/>
 
-    <Button
-        android:id="@+id/btn_6"
-        android:layout_width="match_parent"
-        android:text="rxjava"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rxjava"/>
 
-    <Button
-        android:id="@+id/btn_7"
-        android:text="DiyView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DiyView"/>
 
-    <Button
-        android:id="@+id/btn_8"
-        android:text="viewstatuschange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="viewstatuschange"/>
 
-    <Button
-        android:text="expandtext"
-        android:id="@+id/btn_9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="expandtext"/>
 
-    <Button
-        android:text="diy-list-viewpager"
-        android:id="@+id/btn_10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="diy-list-viewpager"/>
+
+
+        <Button
+            android:id="@+id/btn_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="edit-text"/>
+
+        <Button
+            android:id="@+id/btn_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="animation"/>
+    </LinearLayout>
+</ScrollView>

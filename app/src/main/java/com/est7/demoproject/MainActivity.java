@@ -2,33 +2,12 @@ package com.est7.demoproject;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
+import android.view.View;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-
-    @BindView(R.id.btn_1)
-    Button mBtn1;
-    @BindView(R.id.btn_2)
-    Button mBtn2;
-    @BindView(R.id.btn_3)
-    Button mBtn3;
-    @BindView(R.id.btn_4)
-    Button mBtn4;
-    @BindView(R.id.btn_5)
-    Button mBtn5;
-    @BindView(R.id.btn_6)
-    Button mBtn6;
-    @BindView(R.id.btn_7)
-    Button mBtn7;
-    @BindView(R.id.btn_8)
-    Button mBtn8;
-    @BindView(R.id.btn_9)
-    Button mBtn9;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,57 +17,47 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.btn_1)
-    public void clickBtn1() {
-        ActivitySwitcher.entryDaggerActivty(this);
+
+
+    @OnClick({R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4, R.id.btn_5, R.id.btn_6, R.id.btn_7, R.id.btn_8, R.id.btn_9, R.id.btn_10, R.id.btn_11,R.id.btn_12})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_1:
+                ActivitySwitcher.entryDaggerActivty(this);
+                break;
+            case R.id.btn_2:
+                ActivitySwitcher.entryRetrofitActivty(this);
+                break;
+            case R.id.btn_3:
+                ActivitySwitcher.entryMVPActivty(this);
+                break;
+            case R.id.btn_4:
+                ActivitySwitcher.entryGenericActivity(this);
+                break;
+            case R.id.btn_5:
+                ActivitySwitcher.entryTinkerActivity(this);
+                break;
+            case R.id.btn_6:
+                ActivitySwitcher.entryRxjavaActivity(this);
+                break;
+            case R.id.btn_7:
+                ActivitySwitcher.entryDiyViewActivity(this);
+                break;
+            case R.id.btn_8:
+                ActivitySwitcher.entryStatusActivity(this);
+                break;
+            case R.id.btn_9:
+                ActivitySwitcher.entryExpandTextActivity(this);
+                break;
+            case R.id.btn_10:
+                ActivitySwitcher.entrydiyListViewPagerActivity(this);
+                break;
+            case R.id.btn_11:
+                ActivitySwitcher.entryEditTextActivity(this);
+                break;
+            case R.id.btn_12:
+                ActivitySwitcher.entryAnimationActivity(this);
+                break;
+        }
     }
-
-    @OnClick(R.id.btn_2)
-    public void clickBtn2() {
-        ActivitySwitcher.entryRetrofitActivty(this);
-    }
-
-    @OnClick(R.id.btn_3)
-    public void clickBtn3() {
-        ActivitySwitcher.entryMVPActivty(this);
-    }
-
-    @OnClick(R.id.btn_4)
-    public void clickBtn4() {
-        ActivitySwitcher.entryGenericActivity(this);
-    }
-
-    @OnClick(R.id.btn_5)
-    public void clickBtn5() {
-        ActivitySwitcher.entryBottomDialogActivity(this);
-    }
-
-    @OnClick(R.id.btn_6)
-    public void clickBtn6() {
-        ActivitySwitcher.entryRxjavaActivity(this);
-    }
-
-    @OnClick(R.id.btn_7)
-    public void clickBtn7() {
-        ActivitySwitcher.entryDiyViewActivity(this);
-    }
-
-
-    @OnClick(R.id.btn_8)
-    public void clickBtn8() {
-        ActivitySwitcher.entryStatusActivity(this);
-    }
-
-
-    @OnClick(R.id.btn_9)
-    public void clickBtn9() {
-        ActivitySwitcher.entryExpandTextActivity(this);
-    }
-
-    @OnClick(R.id.btn_10)
-    public void clickBtn10() {
-
-        ActivitySwitcher.entrydiyListViewPagerActivity(this);
-    }
-
 }

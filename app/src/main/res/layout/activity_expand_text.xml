@@ -88,5 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="换主题2"/>
+
+        <ImageView
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@mipmap/rc_item_add_already_user"
+android:background="@drawable/iv_shadow"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

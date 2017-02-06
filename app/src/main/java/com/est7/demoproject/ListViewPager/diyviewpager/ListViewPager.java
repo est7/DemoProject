@@ -36,7 +36,6 @@ public class ListViewPager extends LinearLayout {
         mContext = context;
         initViews();
     }
-
     private void initViews() {
 
         this.setOrientation(VERTICAL);

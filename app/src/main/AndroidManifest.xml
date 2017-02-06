@@ -35,8 +35,6 @@
         </activity>
         <activity android:name=".rxjava.Rxjava2Activity">
         </activity>
-        <activity android:name=".bottomdialog.BottomDialogActivity">
-        </activity>
         <activity android:name=".jsbridge.ViewActivity">
         </activity>
         <activity android:name=".allstatusview.StatusActivity">
@@ -46,6 +44,12 @@
         <activity android:name=".expandtext.ExpandTextActivity">
         </activity>
         <activity android:name=".ListViewPager.ListViewPagerActivity">
+        </activity>
+        <activity android:name=".editview.EditTextActivity">
+        </activity>
+        <activity android:name=".animation.AnimationActivity">
+        </activity>
+        <activity android:name=".tinker.TinkerActivity">
         </activity>
     </application>
 

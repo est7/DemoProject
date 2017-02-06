@@ -25,8 +25,6 @@ public class ListViewPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_pager);
         ButterKnife.bind(this);
-
-
         initView();
     }
 

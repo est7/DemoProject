@@ -2,10 +2,15 @@ package com.est7.demoproject;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 
 import com.est7.demoproject.dragger.component.AppComponent;
 import com.est7.demoproject.dragger.component.DaggerAppComponent;
 import com.est7.demoproject.dragger.module.AppModule;
+import com.tencent.tinker.anno.DefaultLifeCycle;
+import com.tencent.tinker.lib.tinker.TinkerInstaller;
+import com.tencent.tinker.loader.app.DefaultApplicationLike;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 
 /**
  * Created by Administrator.
@@ -17,25 +22,36 @@ import com.est7.demoproject.dragger.module.AppModule;
  * Content:
  */
 
-public class DemoProjectApplication extends Application {
+
+
+@DefaultLifeCycle(
+        application = ".DemoProjectApplication",             //application name to generate
+        flags = ShareConstants.TINKER_ENABLE_ALL)                                //tinkerFlags above
+public class DemoProjectApplication extends DefaultApplicationLike {
 
     private AppComponent mAppComponent;
-    private static Context  mDemoProjectApplication;
+    private static Context application;
+
+    public DemoProjectApplication(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
+        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
+    }
 
     public static Context getInstance() {
-        return mDemoProjectApplication;
+        return application;
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mDemoProjectApplication = this;
+        application = getApplication();
+
+        TinkerInstaller.install(this);
         initDI();
     }
 
     private void initDI() {
         mAppComponent = DaggerAppComponent.builder()
-                .appModule(new AppModule(this))
+                .appModule(new AppModule(getApplication()))
                 .build();
     }
 
@@ -48,4 +64,12 @@ public class DemoProjectApplication extends Application {
     public AppComponent getAppComponent() {
         return this.mAppComponent;
     }
+
+
+
+    @Override
+    public void onBaseContextAttached(Context base) {
+        super.onBaseContextAttached(base);
+    }
+    
 }
