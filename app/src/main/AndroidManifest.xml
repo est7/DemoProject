@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
-        android:name=".DemoProjectApplication"
+        android:name=".DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -53,4 +53,9 @@
         </activity>
     </application>
 
+
+    <service
+        android:name=".tinker.service.SampleResultService"
+        android:exported="false"
+        />
 </manifest>

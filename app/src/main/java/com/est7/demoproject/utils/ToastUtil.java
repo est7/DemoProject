@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.est7.demoproject.DemoProjectApplication;
+import com.est7.demoproject.ApplicationFromTinkerLike;
+
 import com.est7.demoproject.R;
 
 
@@ -22,7 +23,7 @@ public class ToastUtil {
 
     static {
         if (tu == null) {
-            tu = new ToastUtil(DemoProjectApplication.getInstance());
+            tu = new ToastUtil(ApplicationFromTinkerLike.getInstance());
         }
     }
 
@@ -50,7 +51,7 @@ public class ToastUtil {
     }
 
     public static void show(int resId) {
-        show(DemoProjectApplication.getInstance().getString(resId));
+        show(ApplicationFromTinkerLike.getInstance().getString(resId));
     }
 
     public static void showShort(String msg) {
@@ -70,7 +71,7 @@ public class ToastUtil {
     }
 
     public static void showShort(int resId) {
-        showShort(DemoProjectApplication.getInstance().getString(resId));
+        showShort(ApplicationFromTinkerLike.getInstance().getString(resId));
     }
 
     private void setText(String msg) {
