@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.multidex.MultiDex;
 
 import com.est7.demoproject.tinker.Log.MyLogImp;
-import com.est7.demoproject.tinker.util.SampleApplicationContext;
+import com.est7.demoproject.tinker.util.DemoApplicationContext;
 import com.est7.demoproject.tinker.util.TinkerManager;
 import com.tencent.tinker.anno.DefaultLifeCycle;
 import com.tencent.tinker.lib.tinker.Tinker;
@@ -40,6 +40,7 @@ public class ApplicationFromTinkerLike extends DefaultApplicationLike {
     public void onCreate() {
         super.onCreate();
         mDemoProjectApplication = getApplication().getBaseContext();
+
     }
 
 
@@ -58,8 +59,8 @@ public class ApplicationFromTinkerLike extends DefaultApplicationLike {
         //you must install multiDex whatever tinker is installed!
         MultiDex.install(base);
 
-        SampleApplicationContext.application = getApplication();
-        SampleApplicationContext.context = getApplication();
+        DemoApplicationContext.application = getApplication();
+        DemoApplicationContext.context = getApplication();
 
         TinkerManager.setTinkerApplicationLike(this);
 
@@ -74,6 +75,7 @@ public class ApplicationFromTinkerLike extends DefaultApplicationLike {
         //or you can put com.tencent.tinker.** to main dex
         TinkerManager.installTinker(this);
         Tinker tinker = Tinker.with(getApplication());
+
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
