@@ -24,7 +24,16 @@ public class Rxjava2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxjava2);
         ButterKnife.bind(this);
+        setDosomething((num -> num + 5));
+    }
 
 
+    private void setDosomething(DoSomething dosomething) {
+        int anInt = dosomething.getInt(45);
+    }
+
+
+    interface DoSomething {
+        int getInt(int num);
     }
 }
